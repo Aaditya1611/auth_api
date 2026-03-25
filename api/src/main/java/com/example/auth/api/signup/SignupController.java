@@ -4,12 +4,9 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.auth.api.jwt.JwtService;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
 @RestController
@@ -21,7 +18,7 @@ public class SignupController {
     @Autowired
     JwtService jwtService;
 
-    @GetMapping("/signup")
+    @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@RequestBody User user) {
 
         try {
